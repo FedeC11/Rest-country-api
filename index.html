@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Links de bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/app.js" type="module" defer></script>
+  <title>Document</title>
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+      <h2>Where in the world</h2>
+      <input class="border rounded border-ligth" type="button" value="light mode">
+    </nav>
+    <!-- aqui estan los labels -->
+    <section id="global" class=" mt-3">
+      
+      <form action="#">
+        <div class="input-group input-group-lg">
+          <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
+          <input id="filtroPalabras" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        </div>
+        <select id="region" class="form-select mb-5" aria-label="Default select example">
+          <option selected>Filter by Region</option>
+          <option value="1">Africa</option>
+          <option value="2">Americas</option>
+          <option value="3">Asia</option>
+          <option value="4">Europe</option>
+          <option value="5">Oceania</option>
+        </select>
+      </form>
+      <section id="cards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 gap-5 justify-content-center" >
+       
+        </div>
+      </section>
+
+    </section>
+    <section id="mostrarpais" class="d-none">
+      <div><button id="backButton" type="button btn-outline-secondary" class="btn">Back</button></div>
+      <div id="Pais"></div>
+    </section>
+  
+</body>
+</html>

@@ -1,0 +1,7 @@
+.imagen{
+    aspect-ratio: 1/1;
+}
+.imagen img{
+    width: 100%;
+    object-fit: cover;
+}

@@ -16,7 +16,7 @@ const newCard= info =>{
     
           <div class="card-body">
             <h3 class="card-text nunitoT">${info.name.common}</h3>
-            <p class="card-text nunito"><span class="nunito2">population:</span> ${info.population}</p>
+            <p class="card-text nunito"><span class="nunito2">population:</span> ${info.population.toLocaleString("en-US")}</p>
             <p class="card-text nunito"><span class="nunito2">Region:</span> ${info.region}</p>
             <p class="card-text nunito"><span class="nunito2">Capital:</span> ${info.capital}</p>
           </div>`
@@ -65,7 +65,7 @@ const crearPais =(pais,datos)=>{
         <h3 class="mb-3 nunitoT">${pais.name.common}</h3>
         <div class="">
           <p class="p-0"><span class="nunito2">Native name: </span> ${pais.name.nativeName[nativeName].official}</p>
-          <p class="p-0"><span class="nunito2"> Population: </span> ${pais.population}</p>
+          <p class="p-0"><span class="nunito2"> Population: </span> ${pais.population.toLocaleString("en-US")}</p>
           <p class="p-0"><span class="nunito2">Region: </span> ${pais.region}</p>
           <p class="p-0"><span class="nunito2">Sub Region: </span> ${pais.subregion}</p>
           <p class="p-0"><span class="nunito2">Capital: </span> ${pais.capital}</p>

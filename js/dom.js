@@ -15,10 +15,10 @@ const newCard= info =>{
      </div>
     
           <div class="card-body">
-            <h3 class="card-text">${info.name.common}:</h3>
-            <p class="card-text">population: ${info.population}</p>
-            <p class="card-text">Region: ${info.region}</p>
-            <p class="card-text">Capital: ${info.capital}</p>
+            <h3 class="card-text nunitoT">${info.name.common}</h3>
+            <p class="card-text nunito"><span class="nunito2">population:</span> ${info.population}</p>
+            <p class="card-text nunito"><span class="nunito2">Region:</span> ${info.region}</p>
+            <p class="card-text nunito"><span class="nunito2">Capital:</span> ${info.capital}</p>
           </div>`
 
     return div
@@ -46,38 +46,36 @@ const crearPais =(pais)=>{
         textoLanguages=`${textoLanguages} ${pais.languages[language]}, `
     })
     let bordersCountries=pais.borders
-    console.log(bordersCountries)
     let textFrontera="";
     if(bordersCountries != undefined){
         bordersCountries.forEach(element=>{
-            textFrontera=`${textFrontera} <span>${element}</span>`
+            textFrontera=`${textFrontera} <span class="border nunito">${element}</span>`
         })
     }
     
-    console.log(textFrontera)
     section.innerHTML=`
     <div class="col text-center mb-5 col-md-6 ">
       <img class="img-fluid px-3" src="${pais.flags.svg}" alt="${pais.flags.png}">
     </div>
     <div class="col-12 col-md-6 row">
       <div class=" col-12 col-md-6 px-3">
-        <h3 class="mb-3">${pais.name.common}</h3>
+        <h3 class="mb-3 nunitoT">${pais.name.common}</h3>
         <div class="">
-          <p class="p-0">Native name: ${pais.name.nativeName[nativeName].official}</p>
-          <p class="p-0"> Population: ${pais.population}</p>
-          <p class="p-0">Region: ${pais.region}</p>
-          <p class="p-0">Sub Region: ${pais.subregion}</p>
-          <p class="p-0">Capital: ${pais.capital}</p>
+          <p class="p-0"><span class="nunito2">Native name: </span> ${pais.name.nativeName[nativeName].official}</p>
+          <p class="p-0"><span class="nunito2"> Population: </span> ${pais.population}</p>
+          <p class="p-0"><span class="nunito2">Region: </span> ${pais.region}</p>
+          <p class="p-0"><span class="nunito2">Sub Region: </span> ${pais.subregion}</p>
+          <p class="p-0"><span class="nunito2">Capital: </span> ${pais.capital}</p>
         </div>
       </div>
       
       <div class="col-12 col-md-6 mb-4 mt-5 px-3"> 
-        <p>Top level Domain: ${pais.tld}</p>
-        <p>Currencies: ${pais.currencies[currencies].name}</p>
-        <p>Languages: ${textoLanguages}</p>
+        <p><span class="nunito2">Top level Domain: </span> ${pais.tld}</p>
+        <p><span class="nunito2">Currencies: </span> ${pais.currencies[currencies].name}</p>
+        <p><span class="nunito2">Languages: </span> ${textoLanguages}</p>
       </div>
       <div>
-        <span class="px-3 col-12">Border Countries:</span>${textFrontera}
+        <span class="px-3 col-12 nunito2">Border Countries:</span>${textFrontera}
       </div>
     </div>`;
     return section
@@ -93,7 +91,6 @@ const crearPais =(pais)=>{
                 Global.className='d-none'
                 mostrarpais.className=''
                 let found= datos.find(element=>element.name.common==Element.id)
-                console.log(found)
                 const CrearPais = crearPais(found)
                 verPais.appendChild(CrearPais)
         

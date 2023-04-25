@@ -22,11 +22,9 @@ filtroPalabras.addEventListener('keyup',(event)=>{
 
  
 const region = [...dom.$("#region").children]
-console.log(region)
 region.forEach(Element =>{
-    console.log(Element)
     Element.addEventListener('click',()=>{
-        console.log('entre')
+    
         let continente=Element.textContent
         if(continente=='Filter by Region'){
             dom.mostrarCards(datos)
@@ -35,7 +33,6 @@ region.forEach(Element =>{
 
         }else{
             filtroRegion=data.filtroDRegion(datos,continente);
-        console.log(filtroRegion)
         active=true
         dom.mostrarCards(filtroRegion)
         cards1=dom.lugarCards
@@ -47,7 +44,7 @@ region.forEach(Element =>{
 })
   
     const button=dom.$('#backButton')
-    console.log(button)
+    
     button.addEventListener('click',()=>{
         dom.Global.className="mt-3"
         dom.mostrarpais.className="d-none"

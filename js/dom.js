@@ -35,7 +35,7 @@ const mostrarCards =(arreglo)=>{
 const crearPais =(pais)=>{
 
     const  section = newEl('section')
-    section.className='mt-3'
+    section.className='mt-3 row'
     let nativeName= Object.keys(pais.name.nativeName)
     nativeName=nativeName[0]
     let currencies=Object.keys(pais.currencies)
@@ -56,28 +56,29 @@ const crearPais =(pais)=>{
     
     console.log(textFrontera)
     section.innerHTML=`
-    <div>
-      <img src="${pais.flags.svg}" alt="${pais.flags.png}">
+    <div class="col text-center mb-5 col-md-6 ">
+      <img class="img-fluid px-3" src="${pais.flags.svg}" alt="${pais.flags.png}">
     </div>
-    <div>
-      <div>
-        <h3>${pais.name.common}</h3>
-        <div class="info">
-          <p>Native name: ${pais.name.nativeName[nativeName].official}</p>
-          <p> Population: ${pais.population}</p>
-          <p>Region: ${pais.region}</p>
-          <p>Sub Region: ${pais.subregion}</p>
-          <p>Capital: ${pais.capital}</p>
+    <div class="col-12 col-md-6 row">
+      <div class=" col-12 col-md-6 px-3">
+        <h3 class="mb-3">${pais.name.common}</h3>
+        <div class="">
+          <p class="p-0">Native name: ${pais.name.nativeName[nativeName].official}</p>
+          <p class="p-0"> Population: ${pais.population}</p>
+          <p class="p-0">Region: ${pais.region}</p>
+          <p class="p-0">Sub Region: ${pais.subregion}</p>
+          <p class="p-0">Capital: ${pais.capital}</p>
         </div>
       </div>
-      <div> 
+      
+      <div class="col-12 col-md-6 mb-4 mt-5 px-3"> 
         <p>Top level Domain: ${pais.tld}</p>
         <p>Currencies: ${pais.currencies[currencies].name}</p>
         <p>Languages: ${textoLanguages}</p>
       </div>
       <div>
-        <span>Border Countries:</span>${textFrontera}
-              </div>
+        <span class="px-3 col-12">Border Countries:</span>${textFrontera}
+      </div>
     </div>`;
     return section
     
@@ -87,16 +88,13 @@ const crearPais =(pais)=>{
     const verPais=$('#Pais')
     const agregarClick =(seleccionador,datos)=>{
       let  presentarUna=[...seleccionador.children]
-        console.log(presentarUna)
         presentarUna.forEach((Element,index)=>{
             Element.addEventListener('click',()=>{
-                console.log(Element.id)
                 Global.className='d-none'
                 mostrarpais.className=''
                 let found= datos.find(element=>element.name.common==Element.id)
                 console.log(found)
                 const CrearPais = crearPais(found)
-                console.log(CrearPais)
                 verPais.appendChild(CrearPais)
         
             })

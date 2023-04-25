@@ -26,14 +26,18 @@
           <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
           <input id="filtroPalabras" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
-        <select id="region" class="form-select mb-5" aria-label="Default select example">
-          <option selected>Filter by Region</option>
-          <option value="1">Africa</option>
-          <option value="2">Americas</option>
-          <option value="3">Asia</option>
-          <option value="4">Europe</option>
-          <option value="5">Oceania</option>
-        </select>
+        <div class="dropdown my-3">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Filtered by Region
+          </button>
+          <ul id="region" class="dropdown-menu">
+            <li class="dropdown-item">Africa</li>
+            <li class="dropdown-item">Americas</li>
+            <li class="dropdown-item">Asia</li>
+            <li class="dropdown-item">Europe</li>
+            <li class="dropdown-item">Oceania</li>
+          </ul>
+        </div>
       </form>
       <section id="cards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 gap-5 justify-content-center" >
        
@@ -42,8 +46,8 @@
 
     </section>
     <section id="mostrarpais" class="d-none">
-      <div><button id="backButton" type="button btn-outline-secondary" class="btn">Back</button></div>
-      <div id="Pais"></div>
+      <button id="backButton" type="button " class="btn btn-outline-secondary ms-3 mt-3">Back</button>
+      <div id="Pais" class="container-fluid"></div>
     </section>
   
 </body>

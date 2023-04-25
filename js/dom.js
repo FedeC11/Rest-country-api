@@ -32,7 +32,7 @@ const mostrarCards =(arreglo)=>{
         lugarCards.appendChild( card);
     });
 }
-const crearPais =(pais)=>{
+const crearPais =(pais,datos)=>{
 
     const  section = newEl('section')
     section.className='mt-3 row'
@@ -49,7 +49,10 @@ const crearPais =(pais)=>{
     let textFrontera="";
     if(bordersCountries != undefined){
         bordersCountries.forEach(element=>{
-            textFrontera=`${textFrontera} <span class="border nunito">${element}</span>`
+          let nombrecompleto=datos.find(Element=>Element.cca3==element)
+          nombrecompleto=nombrecompleto.name.common
+          console.log(nombrecompleto)
+            textFrontera=`${textFrontera} <span class="border nunito px-1">${nombrecompleto}</span>`
         })
     }
     
@@ -91,7 +94,7 @@ const crearPais =(pais)=>{
                 Global.className='d-none'
                 mostrarpais.className=''
                 let found= datos.find(element=>element.name.common==Element.id)
-                const CrearPais = crearPais(found)
+                const CrearPais = crearPais(found,datos)
                 verPais.appendChild(CrearPais)
         
             })

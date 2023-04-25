@@ -3,18 +3,17 @@ import dom from "./dom.js";
 
 const datos = await data.getData();
 
+let cards1=dom.lugarCards
 dom.mostrarCards(datos)
-
+dom.agregarClick(cards1,datos)
 const filtroPalabras=dom.$('#filtroPalabras');
 let filtroRegion =null;
 let filtrado=null
-let active =false
-let cards1=null
-let cards2=null
+
 filtroPalabras.addEventListener('keyup',(event)=>{
     let buscar =event.target.value;
     filtrado =data.filtroPalabras(datos,buscar);
-    active=true
+    
     dom.mostrarCards(filtrado)
     cards1=dom.lugarCards
     dom.agregarClick(cards1,datos)
@@ -33,7 +32,7 @@ region.forEach(Element =>{
 
         }else{
             filtroRegion=data.filtroDRegion(datos,continente);
-        active=true
+        
         dom.mostrarCards(filtroRegion)
         cards1=dom.lugarCards
         dom.agregarClick(cards1,datos)
@@ -49,5 +48,10 @@ region.forEach(Element =>{
         dom.Global.className="mt-3"
         dom.mostrarpais.className="d-none"
         dom.verPais.innerHTML="";
+    })
+    const html=dom.$('html')
+    const buttonSwitch =dom.$('#switch')
+    buttonSwitch.addEventListener("click",()=>{
+        html.dataset.bsTheme=html.dataset.bsTheme=="ligth"?"dark":"ligth";
     })
  

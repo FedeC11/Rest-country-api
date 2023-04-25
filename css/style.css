@@ -5,3 +5,21 @@
     width: 100%;
     object-fit: cover;
 }
+
+.nunito{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+}
+.nunito1{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+}
+.nunitoT{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+}
+.nunito2{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+}
